@@ -1,0 +1,68 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+MATERIAL "Material" rgb 0.8 0.8 0.8 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0
+OBJECT world
+kids 3
+OBJECT poly
+name "redPuff"
+data 7
+redPuff
+texture "common.rgb"
+texrep 1 1
+crease 30
+numvert 4
+0.15 0.15 0.008513
+0.15 -0.15 0.008513
+-0.15 -0.15 0.008513
+-0.15 0.15 0.008513
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+3 0.362293154001 0.325523287058
+0 0.362293154001 0.188879877329
+1 0.49893656373 0.188879877329
+2 0.49893656373 0.325523287058
+kids 0
+OBJECT poly
+name "whitePuff"
+data 9
+whitePuff
+texture "common.rgb"
+texrep 1 1
+crease 30
+numvert 4
+-0.15 -0.15 0
+0.15 -0.15 0
+0.15 0.15 0
+-0.15 0.15 0
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+0 0.210640653968 0.189871102571
+3 0.210640653968 0.329173773527
+2 0.0713380351663 0.329173773527
+1 0.0713380351663 0.189871102571
+kids 0
+OBJECT poly
+name "greenPuff"
+data 9
+greenPuff
+texture "common.rgb"
+texrep 1 1
+crease 30
+numvert 4
+-0.15 0.15 -0.007094
+0.15 0.15 -0.007094
+0.15 -0.15 -0.007094
+-0.15 -0.15 -0.007094
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+0 0.360347628593 0.192350745201
+3 0.360347628593 0.329452931881
+2 0.223245471716 0.329452931881
+1 0.223245471716 0.192350745201
+kids 0

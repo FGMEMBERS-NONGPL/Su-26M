@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+   <!--sensitive areas--> 
+
+<panel>
+   <name>mainPanel</name>
+   <path>Aircraft/Su-26M/Panels/main-panel.xml</path>
+   <depth-test type="bool">true</depth-test>   
+   <bottom-left>
+    <x-m>1.252</x-m>
+    <y-m>-0.325</y-m>
+    <z-m> 0.048</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>1.252</x-m>
+    <y-m> 0.326</y-m>
+    <z-m> 0.048</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>1.162</x-m>
+    <y-m>-0.325</y-m>
+    <z-m> 0.528</z-m>
+   </top-left>
+ </panel> 
+
+
+<panel>
+   <name>start panel</name>
+   <path>Aircraft/Su-26M/Panels/start-panel.xml</path>
+   <depth-test type="bool">true</depth-test>   
+   <bottom-left>
+    <x-m>1.482</x-m>
+    <y-m>-0.409</y-m>
+    <z-m>-0.020</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>1.475</x-m>
+    <y-m>-0.208</y-m>
+    <z-m>0.0</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>1.434</x-m>
+    <y-m>-0.425</y-m>
+    <z-m> 0.123</z-m>
+   </top-left>
+  </panel>
+  
+<panel>
+   <name>canopy panel</name>
+   <path>Aircraft/Su-26M/Panels/canopy-panel.xml</path>
+   <depth-test type="bool">true</depth-test>   
+   <bottom-left>
+    <x-m>1.494</x-m>
+    <y-m>-0.378</y-m>
+    <z-m>-0.142</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>1.494</x-m>
+    <y-m>0.354</y-m>
+    <z-m>-0.142</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>1.494</x-m>
+    <y-m>-0.378</y-m>
+    <z-m> 0.690</z-m>
+   </top-left>
+</panel>
+
+<panel>
+   <name>right panel</name>
+   <path>Aircraft/Su-26M/Panels/right-panel.xml</path>
+   <depth-test type="bool">true</depth-test>   
+   <bottom-left>
+    <x-m>1.586</x-m>
+    <y-m>0.083</y-m>
+    <z-m>-0.140</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>1.586</x-m>
+    <y-m>0.502</y-m>
+    <z-m>-0.140</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>1.475</x-m>
+    <y-m>0.083</y-m>
+    <z-m>0.155</z-m>
+   </top-left>
+</panel>
+
+<panel>
+   <name>g-meter panel</name>
+   <path>Aircraft/Su-26M/Panels/g-meter-panel.xml</path>
+   <depth-test type="bool">true</depth-test>   
+   <bottom-left>
+    <x-m>1.091</x-m>
+    <y-m>-0.092</y-m>
+    <z-m>-0.157</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>1.091</x-m>
+    <y-m>0.096</y-m>
+    <z-m>-0.157</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>1.093</x-m>
+    <y-m>-0.092</y-m>
+    <z-m>-0.017</z-m>
+   </top-left>
+</panel> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>canopy panel</object-name>
+  <property>controls/canopy/canopy-pos-norm</property>
+  <factor>45.0</factor>
+  <center>
+   <x-m>2.27</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.59</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>             
+
+
+</PropertyList>

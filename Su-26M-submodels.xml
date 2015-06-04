@@ -1,0 +1,51 @@
+<PropertyList>
+
+  <submodel>
+    <name>center smoke generator</name>
+    <model>Aircraft/Su-26M/Models/whitePuff.xml</model>
+    <trigger>/ai/submodels/submodel[0]/smoke</trigger>
+    <speed>0.0</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>-1</count>
+    <buoyancy>32</buoyancy>
+    <x-offset>-2.5</x-offset>
+    <y-offset>0.0</y-offset>
+    <z-offset>-1.0</z-offset>
+    <eda>1000000000.00</eda>
+    <life>10.0</life>
+  </submodel>
+  
+   <submodel>
+    <name>right smoke generator</name>
+    <model>Aircraft/Su-26M/Models/greenPuff.xml</model>    
+    <trigger>/ai/submodels/submodel[1]/tipsmoke</trigger>
+    <speed>0.0</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>-1</count>
+    <buoyancy>32</buoyancy>
+    <x-offset>-10.0</x-offset>
+    <y-offset>14.0</y-offset>
+    <z-offset>0.0</z-offset>
+    <eda>1000000000.00</eda>
+    <life>10.0</life>
+  </submodel>
+  
+   <submodel>
+    <name>left smoke generator</name>
+    <model>Aircraft/Su-26M/Models/redPuff.xml</model>
+    <trigger>/ai/submodels/submodel[1]/tipsmoke</trigger>
+    <speed>0.0</speed>
+    <repeat>true</repeat>
+    <delay>0.05</delay>
+    <count>-1</count>
+    <buoyancy>32</buoyancy>
+    <x-offset>-10.0</x-offset>
+    <y-offset>-14.0</y-offset>
+    <z-offset>0.0</z-offset>
+    <eda>1000000000.00</eda>
+    <life>10.0</life>
+  </submodel> 
+  
+</PropertyList>  

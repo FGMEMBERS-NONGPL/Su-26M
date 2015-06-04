@@ -1,0 +1,220 @@
+<PropertyList>
+
+ <name>Su-26 main panel</name>
+ <background>Aircraft/Su-26M/Panels/transparent-bg.rgb</background>
+ <depth-test type="bool">true</depth-test>   
+ <w>1024</w>
+ <h>768</h>
+ 
+<instruments>
+  
+ <instrument>
+  <name>attitude reference left</name>
+    <w-base>162</w-base>
+    <h-base>162</h-base>
+    <x>92</x>
+    <y>92</y>
+    <w>168</w>
+    <h>168</h>    
+ <layers>
+      
+  <layer>
+   <name>horizon</name>
+   <texture>
+    <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+    <x1>0.635</x1>
+    <y1>0.428</y1>
+    <x2>0.978</x2>
+    <y2>0.773</y2>
+   </texture>
+   <w>320</w>
+   <h>320</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+     <min>-180.0</min>
+     <max>180.0</max>
+     <scale>1</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+     <min>-180.0</min>
+     <max>180.0</max>
+     <scale>-0.5</scale>
+     <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+  
+    <layer>
+     <name>frame</name>
+      <texture>
+       <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+       <x1>0.0195</x1>
+       <y1>0.012</y1>
+       <x2>0.334</x2>
+       <y2>0.328</y2>
+     </texture>
+     <w>168</w>
+     <h>168</h>     
+    </layer>  
+   </layers>     
+    
+  </instrument>
+  
+ <instrument>
+  <name>attitude reference right</name>
+    <w-base>162</w-base>
+    <h-base>162</h-base>
+    <x>932</x>
+    <y>92</y>
+    <w>168</w>
+    <h>168</h>    
+ <layers>
+      
+  <layer>
+   <name>horizon</name>
+   <texture>
+    <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+    <x1>0.635</x1>
+    <y1>0.428</y1>
+    <x2>0.978</x2>
+    <y2>0.773</y2>
+   </texture>
+   <w>320</w>
+   <h>320</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+     <min>-180.0</min>
+     <max>180.0</max>
+     <scale>-1</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+     <min>-180.0</min>
+     <max>180.0</max>
+     <scale>0.5</scale>
+     <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+  
+    <layer>
+     <name>frame</name>
+      <texture>
+       <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+       <x1>0.668</x1>
+       <y1>0.0117</y1>
+       <x2>0.982</x2>
+       <y2>0.328</y2>
+     </texture>
+     <w>168</w>
+     <h>168</h>     
+    </layer>  
+   </layers>     
+    
+  </instrument>  
+ 
+ <instrument>
+  <name>Airspeed</name>
+    <w-base>144</w-base>
+    <h-base>144</h-base>
+    <x>82</x>
+    <y>686</y>
+    <w>144</w>
+    <h>144</h>    
+
+ <layers>
+      
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+    <x1>0.023</x1>
+    <y1>0.705</y1>
+    <x2>0.305</x2>
+    <y2>0.984</y2>
+   </texture>
+   <w>144</w>
+   <h>144</h>   
+  </layer> 
+  
+    <layer>
+     <name>airspeed needle</name>
+      <texture>
+       <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+       <x1>0.383</x1>
+       <y1>0.875</y1>
+       <x2>0.4</x2>
+       <y2>0.961</y2>
+     </texture>
+     <w>8</w>
+     <h>44</h>
+      <transformations>
+       <transformation>
+        <type>rotation</type>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <min>0.0</min>
+        <max>450.0</max>
+        <scale>-1.25</scale>
+       </transformation>
+       <transformation>
+         <type>y-shift</type>
+         <offset>0</offset>
+       </transformation>       
+      </transformations>         
+    </layer>
+        
+   </layers> 
+    
+  </instrument> 
+  
+   
+  <instrument>
+  <name>g-meter</name>
+    <w-base>144</w-base>
+    <h-base>144</h-base>
+    <x>942</x>
+    <y>686</y>
+    <w>144</w>
+    <h>144</h>    
+ <layers>
+      
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+    <x1>0.023</x1>
+    <y1>0.392</y1>
+    <x2>0.305</x2>
+    <y2>0.672</y2>
+   </texture>
+   <w>144</w>
+   <h>144</h>
+  </layer> 
+  
+    <layer>
+     <name>g-meter needle</name>
+      <texture>
+       <path>Aircraft/Su-26M/Panels/mini-panel-icons.rgb</path>
+       <x1>0.383</x1>
+       <y1>0.875</y1>
+       <x2>0.4</x2>
+       <y2>0.961</y2>
+     </texture>
+     <w>8</w>
+     <h>44</h>     
+    </layer>  
+   </layers> 
+    
+  </instrument> 
+  
+  
+ </instruments>  
+   
+</PropertyList>

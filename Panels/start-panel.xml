@@ -1,0 +1,87 @@
+<PropertyList>
+
+ <name>Su-26 main panel</name>
+ <background>Aircraft/Su-26M/Panels/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+ <!--<view-height>768</view-height>-->
+ 
+<instruments>
+  
+ <instrument> <!--include="Instruments/mainActions.xml"-->
+
+  <name>controls</name>
+   <x>512</x>
+   <y>384</y>   
+   <w-base>1024</w-base>
+   <h-base>768</h-base>
+
+ <actions>
+
+  <action>                             
+   <desc>magneto 1</desc>
+   <button>0</button>               
+   <x>-40</x>                        
+   <y>330</y>
+   <w>32</w>                        
+   <h>48</h>
+   <binding>
+    <command>property-toggle</command>
+    <property>controls/engines/engine/starter</property>                     
+   </binding>
+  </action>
+  
+  <action>                             
+   <desc>magneto 2</desc>
+   <button>0</button>               
+   <x>40</x>                        
+   <y>330</y>
+   <w>32</w>                        
+   <h>48</h>
+   <binding>
+    <command>property-toggle</command>
+    <property>controls/lamp-test</property>                     
+   </binding>
+  </action>
+  
+  <action>			       
+   <desc>starter lock</desc>
+   <button>0</button>		       
+   <x>-5</x>  			 
+   <y>36</y>
+   <w>128</w>			       
+   <h>128</h>
+   <binding>
+    <command>property-toggle</command>
+    <property>controls/engines/engine/starter-lock</property>		     
+   </binding>			 
+  </action>
+ 
+  <action>			       
+   <desc>starter</desc>
+   <button>0</button>		       
+   <x>-16</x>  			 
+   <y>-280</y>
+   <w>128</w>			       
+   <h>128</h>
+   <binding>
+      <command>property-assign</command>
+      <property>controls/engines/engine/starter</property>      
+      <value>true</value>                 
+   </binding>
+   <mod-up>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/engines/engine/starter</property>      
+      <value>false</value>
+    </binding>
+   </mod-up>   			 
+  </action>
+   
+ </actions>
+ 
+ </instrument>
+ 
+ </instruments> 
+   
+</PropertyList>

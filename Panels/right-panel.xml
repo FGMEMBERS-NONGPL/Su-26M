@@ -1,0 +1,71 @@
+<PropertyList>
+
+ <name>Su-26 main panel</name>
+ <background>Aircraft/Su-26M/Panels/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+ 
+<instruments>
+  
+ <instrument> <!--include="Instruments/mainActions.xml"-->
+
+  <name>controls</name>
+   <x>512</x>
+   <y>384</y>   
+   <w-base>1024</w-base>
+   <h-base>768</h-base>
+
+ <actions>
+
+  <action>                             
+   <desc>open gills</desc>
+   <button>0</button>               
+   <x>-20</x>                        
+   <y>210</y>
+   <w>48</w>                        
+   <h>48</h>
+   <binding>
+     <command>property-adjust</command>
+     <property>/controls/engines/engine/cowl-flaps-norm[0]</property>
+     <step type="double">0.1</step>
+     <max>1.0</max>
+   </binding>
+  </action>
+  
+  <action>                             
+   <desc>close gills</desc>
+   <button>0</button>               
+   <x>0</x>                        
+   <y>160</y>
+   <w>48</w>                        
+   <h>48</h>
+   <binding>
+     <command>property-adjust</command>
+     <property>/controls/engines/engine/cowl-flaps-norm</property>
+     <step type="double">-0.1</step>
+     <max>1.0</max>
+   </binding>
+  </action>
+  
+  <action>			       
+   <desc>priming pump</desc>
+   <button>0</button>		       
+   <x>-80</x>  			 
+   <y>-290</y>
+   <w>128</w>			       
+   <h>128</h>
+   <binding>
+    <command>property-assign</command>
+    <property>controls/engines/engine/mixture</property>		     
+    <value>1.0</value>
+   </binding>			 
+  </action>
+ 
+  
+ </actions>
+ 
+ </instrument>
+ 
+ </instruments> 
+   
+</PropertyList>

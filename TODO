@@ -1,0 +1,14 @@
+- Flight manual
+- Custom sound
+    - wind hiss and engine noise according to openings (canopy, ventilation flap)
+    - Stall noise
+- Flight model tweaking (propeller, moment coefficient)
+- Proper engine shut off valve
+- Functional radio panel
+- Tear off canopy when opening at speed
+- Leaflet browser
+- Aerobatics 2D panel
+- Pneumatic start system
+- Skin selector
+- Loadout selector
+- External tank

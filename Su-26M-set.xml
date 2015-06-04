@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  
+ <sim include="Su-26M-views.xml">
+
+  <description>Sukhoi Su-26M</description>
+  <status>alpha</status>
+  <aircraft-version>1.0</aircraft-version>  
+  
+  <startup>
+   <splash-texture>Aircraft/Su-26M/Su-26M2.rgb</splash-texture>
+  </startup>
+
+  <flight-model>jsb</flight-model>  
+  <aero>Su-26M</aero>
+  
+ <model>
+   <path>Aircraft/Su-26M/Models/Su-26M.xml</path>
+ </model> 
+ 
+  <panel>
+   <path>Aircraft/Su-26M/Panels/acroPanel.xml</path>
+   <visibility archive="y">false</visibility>
+  </panel>   
+ 
+  <systems>
+    <electrical>
+      <path>Aircraft/Su-26M/Su-26M-electrical.xml</path>
+    </electrical>
+  </systems>
+  
+  <sound>
+   <path>Aircraft/Su-26M/Su-26M-sound.xml</path>
+  </sound>
+  
+  <consumables>
+   <fuel>
+    <tank n="0">
+     <level-gal_us archive="y">17</level-gal_us>
+    </tank>
+   </fuel>
+  </consumables>
+ 
+ <!-- Smoke Generators -->
+  <submodels>
+    <serviceable type="bool">1</serviceable>
+    <path>Aircraft/Su-26M/Su-26M-submodels.xml</path>
+  </submodels>
+
+ </sim>
+
+  <controls>
+  <lamp-test>false</lamp-test>
+  <lamp-test-motion>0.0</lamp-test-motion>
+  <engines>
+   <engine n="0">
+    <magnetos n="0">3</magnetos>
+   </engine>
+  </engines>
+  <canopy>
+     <jettison-handle-motion type="float">0.0</jettison-handle-motion>
+     <canopy-pos-norm type="float">1.0</canopy-pos-norm>
+     <vent-flap-norm>0.0</vent-flap-norm>
+  </canopy>
+ </controls>
+ 
+ <!-- Key bindings -->
+ 
+  <input>
+   <keyboard>
+   
+    <key n="83">
+     <name>Shift-s</name>
+     <desc>Toggle center smoke</desc>
+     <binding>
+      <command>property-toggle</command>
+      <property>/ai/submodels/submodel[0]/smoke</property>
+     </binding>
+    </key>
+    
+    <key n="102">
+     <name>f</name>
+     <desc>Toggle wingtip smoke</desc>
+     <binding>
+      <command>property-toggle</command>
+      <property>/ai/submodels/submodel[1]/tipsmoke</property>
+     </binding>
+    </key>
+    
+    <key n="103">
+     <name>g</name>
+     <desc>Open gills</desc>
+     <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine/cowl-flaps-norm[0]</property>
+      <step type="double">0.1</step>
+      <max>1.0</max>
+    </binding>
+   </key>
+    
+   <key n="71">
+    <name>G</name>
+    <desc>Close gills</desc>
+     <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine/cowl-flaps-norm</property>
+      <step type="double">-0.1</step>
+      <max>1.0</max>
+     </binding>
+    </key>
+    
+    <key n="67">
+       <name>C</name>
+       <desc>Toggle Canopy</desc>
+       <binding>
+         <command>nasal</command>
+         <script>scripts.toggle_canopy()</script>
+       </binding>
+    </key>
+    
+   </keyboard>
+  </input>
+  
+<!-- Nasal files/scripts -->
+  <nasal>
+    <Su-26M>
+      <module>scripts</module>
+      <file>Aircraft/Su-26M/Su-26M.nas</file>
+    </Su-26M>
+  </nasal>
+  
+ 
+
+</PropertyList>

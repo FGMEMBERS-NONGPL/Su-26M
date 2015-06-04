@@ -1,0 +1,36 @@
+Su-26 v1.0 alpha 1
+
+Copyright 2006 Enrique Laso Leon
+Final releases will be released under GPL or LGPL but for the time being I 
+reserve the rights to release any modification on the model. 
+This is in order to get only one thread of development.
+This will NEVER be a commercial product.
+
+This is my first attempt at a model for flightgear.
+This release is meant for early debugging of the flight dynamics model and
+collecting feedback on the 3D model and animations.
+
+Feel free to post your feedback at the following address on AVSIM flightgear 
+forum :
+
+http://forums.avsim.net/dcboard.php?az=show_topic&forum=198&topic_id=1882&mesg_id=1882&page=
+
+
+Thanks to all the flightgear and JSBSim community to bring this fine 
+simulator to current maturity.
+
+Special keys
+S : Toggle centerline smoke generator
+f : Toggle wingtip smoke generator
+C : Toggle canopy
+g : Open engine gills
+G : Shut engine gills
+ 
+Special procedures
+
+      Take off
+        Apply 800 mmHg throttle 
+	Lift off will happen at 120 km/h with strong roll
+      Landing
+        Approach glide 170km/h
+	Shut down engine just before runway threshold 

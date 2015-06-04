@@ -1,0 +1,731 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>Su-26M.ac</path>
+  <offsets>
+    <x-m>1.7</x-m>
+  </offsets>
+ 
+ <!-- include animations for the engine gills-->
+ <!--<animation include="Aircraft/Su-26M/Models/engine-gills.xml"/>-->
+ 
+ <!-- LOD for the model as a whole -->
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10000</max-m>
+ </animation>
+ 
+ <!-- Cockpit LODing -->
+
+ <animation>
+  <name>InteriorGroup</name>
+  <object-name>Cockpit</object-name>
+  <object-name>Seat</object-name>
+  <object-name>Head</object-name>
+  <object-name>PilotBody</object-name>
+  <object-name>LeftArm</object-name>
+  <object-name>RightArm</object-name>
+  <object-name>CanopyLatch</object-name>
+  <object-name>Stick</object-name>
+  <object-name>Throttle</object-name>
+ </animation>
+
+ <animation>
+  <type>range</type>
+  <object-name>InteriorGroup</object-name>
+  <min-m>0</min-m>
+  <max-m>300</max-m>
+ </animation>
+
+ <!-- remove objects that are not needed in virtual cockpit view -->
+ 
+ <animation>
+   <name>notFromCockpit</name>
+     <object-name>TailWheelFork</object-name>
+     <object-name>TailWheelTire</object-name>
+     <object-name>TailWheelRim</object-name>
+     <object-name>Spinner</object-name>
+     <object-name>CanopyFrame</object-name>
+     <object-name>Canopy</object-name>
+     <object-name>Windscreen</object-name>
+ </animation> 
+
+ <animation>
+  <type>select</type>
+  <object-name>InteriorGroup</object-name>  
+  <object-name>notFromCockpit</object-name>
+  <condition>
+    <not>
+     <property>/sim/current-view/internal</property>
+    </not>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>noshadow</type>
+  <object-name>Canopy</object-name>
+  <object-name>Windscreen</object-name>
+ </animation>
+
+      
+ <!-- Propeller + engine ************************-->
+ 
+ 
+ <animation>
+  <type>select</type>
+  <object-name>Propeller</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>800</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Propeller</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>-1.77</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.12</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ 
+  <animation>
+  <type>select</type>
+  <object-name>PropellerDisk</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>800</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>noshadow</type>
+  <object-name>PropellerDisk</object-name>
+ </animation> 
+
+ <animation>
+  <type>spin</type>
+  <object-name>PropellerDisk</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>-0.05</factor>
+  <center>
+   <x-m>-1.77</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.12</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+  
+
+
+ <!-- Gear ************************-->
+
+ 
+<!-- <animation>
+  <type>rotate</type>
+  <object-name>TailWheelFork</object-name>
+  <object-name>TailWheelTire</object-name>
+  <object-name>TailWheelRim</object-name>  
+  <property>/fdm/jsbsim/fcs/steer-pos-deg[2]</property>
+  <factor>1.0</factor>
+  <center>
+   <x-m>4.59</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.38</z-m>
+  </center>
+  <axis>
+   <x>0.25</x>
+   <y>0.00</y>
+   <z>1.0</z>
+  </axis>
+ </animation> -->
+ 
+  <animation>
+  <type>spin</type>
+  <object-name>MainGearTire</object-name>
+  <object-name>MainGearHub</object-name>  
+  <object-name>MainGearTire.001</object-name>
+  <object-name>MainGearHub.001</object-name>   
+  <condition>
+   <and>
+    <less-than>
+     <property>/position/altitude-agl-ft</property> <!-- possible bug of wow -->
+     <value>50.0</value>
+    </less-than>
+    <property>/gear/gear[0]/wow</property> <!-- ground contact -->
+   </and>
+  </condition>
+  <property>/velocities/uBody-fps</property>
+  <factor>-2.0</factor>
+  <center>
+   <x-m>-0.133</x-m>
+   <y-m>0</y-m>
+   <z-m>-1.363</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>spin</type>
+  <object-name>TailWheelTire</object-name>
+  <object-name>TailWheelRim</object-name>  
+  <condition>
+   <and>
+    <less-than>
+     <property>/position/altitude-agl-ft</property> <!-- possible bug of wow -->
+     <value>50.0</value>
+    </less-than>
+    <property>/gear/gear[0]/wow</property> <!-- ground contact -->
+   </and>
+  </condition>
+  <property>/velocities/uBody-fps</property>
+  <factor>-2.0</factor>
+  <center>
+   <x-m>4.721</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.545</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <!-- Flight Controls ************************-->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>LeftAileron</object-name>
+  <property>/controls/flight/aileron</property>
+  <factor>25</factor>
+  <center>
+   <x-m>1.06</x-m>
+   <y-m>-2.03</y-m>
+   <z-m>-0.24</z-m>
+  </center>
+  <axis>
+   <x>0.185</x>
+   <y>0.983</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>RightAileron</object-name>
+  <property>/controls/flight/aileron</property>
+  <factor>25</factor>
+  <center>
+   <x-m>1.06</x-m>
+   <y-m>2.03</y-m>
+   <z-m>-0.24</z-m>
+  </center>
+  <axis>
+   <x>0.185</x>
+   <y>-0.983</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ElevatorL</object-name>
+  <object-name>ElevatorR</object-name>  
+  <property>/controls/flight/elevator</property>
+  <factor>25</factor> <!-- check -->
+  <center>
+   <x-m>4.23</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.3</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Rudder</object-name>
+  <property>/controls/flight/rudder</property>
+  <factor>17.5</factor>
+  <center>
+   <x-m>4.33</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.91</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>0</y>
+   <z>1</z>
+  </axis>
+ </animation>
+
+ <!-- animation of engine gills ********************************** -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill1</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.104</y-m>
+   <z-m>-0.242</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill2</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.062</y-m>
+   <z-m>-0.267</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill3</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.013</y-m>
+   <z-m>-0.278</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill4</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.036</y-m>
+   <z-m>-0.274</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill5</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.081</y-m>
+   <z-m>-0.254</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill6</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.118</y-m>
+   <z-m>-0.221</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill7</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.144</y-m>
+   <z-m>-0.179</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill8</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.154</y-m>
+   <z-m>-0.130</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill9</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.150</y-m>
+   <z-m>-0.081</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill10</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.130</y-m>
+   <z-m>-0.036</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill11</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.097</y-m>
+   <z-m>0.001</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill12</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.055</y-m>
+   <z-m>0.027</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill13</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>0.006</y-m>
+   <z-m>0.037</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill14</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.043</y-m>
+   <z-m>0.033</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill15</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.088</y-m>
+   <z-m>0.013</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill16</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.125</y-m>
+   <z-m>-0.020</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill17</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.151</y-m>
+   <z-m>-0.062</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill18</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.161</y-m>
+   <z-m>-0.110</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill19</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.157</y-m>
+   <z-m>-0.160</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>Gill20</object-name>
+  <property>controls/engines/engine/cowl-flaps-norm[0]</property>
+  <factor>70.0</factor>
+  <center>
+   <x-m>-1.263</x-m>
+   <y-m>-0.137</y-m>
+   <z-m>-0.205</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <!-- canopy-->
+ 
+  <animation>
+  <type>select</type>
+  <object-name>Canopy</object-name>
+  <object-name>CanopyFrame</object-name>
+  <object-name>VentFlap</object-name>
+  <condition>
+   <not>
+    <property>controls/canopy/canopy-jettison</property>
+   </not>    
+  </condition>  
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>CanopyFrame</object-name>
+  <object-name>Canopy</object-name>
+  <object-name>CanopyLatch</object-name>    
+  <object-name>VentFlap</object-name>   
+  <property>controls/canopy/canopy-pos-norm</property>
+  <factor>45.0</factor>
+  <center>
+   <x-m>2.27</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.59</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>CanopyLatch</object-name>    
+  <property>controls/canopy/canopy-pos-norm</property>
+  <interpolation>
+     <entry><ind> 0</ind><dep>0</dep></entry>
+     <entry><ind>0.05</ind><dep>30</dep></entry>
+     <entry><ind>0.15</ind><dep>0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>1.471</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.264</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>  
+ 
+  <animation>
+  <type>rotate</type>
+  <object-name>VentFlap</object-name>    
+  <property>controls/canopy/vent-flap-norm</property>
+  <factor>20.0</factor>
+  <center>
+   <x-m>1.275</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.617</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>  
+
+ <!-- Inclusion of 2D panels  **************************************-->
+
+ <model>
+  <name>2D panels</name>
+  <path>Aircraft/Su-26M/Models/Su-26M-panels.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </offsets>
+ </model>
+ 
+<!-- Inclusion of virtual cockpit  **************************************-->
+
+ <model>
+  <name>Virtual Cockpit</name>
+  <path>Aircraft/Su-26M/Models/Su-26M-cockpit.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </offsets>
+ </model> 
+ 
+
+</PropertyList>

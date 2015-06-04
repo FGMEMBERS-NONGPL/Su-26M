@@ -1,0 +1,65 @@
+<PropertyList>
+
+ <name>Su-26 main panel</name>
+ <background>Aircraft/Su-26M/Panels/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+<instruments>
+  
+ <instrument> <!--include="Instruments/mainActions.xml"-->
+
+  <name>controls</name>
+   <x>512</x>
+   <y>370</y>   
+   <w-base>1024</w-base>
+   <h-base>768</h-base>
+
+ <actions>
+
+  <action>                             
+   <desc>left latch</desc>
+   <button>0</button>               
+   <x>450</x>                        
+   <y>10</y>
+   <w>40</w>                        
+   <h>60</h>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.toggle_canopy()</script>
+   </binding>
+  </action>
+  
+  <action>                             
+   <desc>right latch</desc>
+   <button>0</button>               
+   <x>-450</x>                        
+   <y>10</y>
+   <w>40</w>                        
+   <h>60</h>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.toggle_canopy()</script>
+   </binding>
+  </action>
+  
+  <action>			       
+   <desc>vent toggle</desc>
+   <button>0</button>		       
+   <x>100</x>  			 
+   <y>275</y>
+   <w>16</w>			       
+   <h>20</h>
+   <binding>
+    <command>nasal</command>
+    <script>scripts.toggle_vent()</script>
+   </binding>			 
+  </action>
+  
+ </actions>
+ 
+ </instrument>
+ 
+ </instruments> 
+   
+</PropertyList>
