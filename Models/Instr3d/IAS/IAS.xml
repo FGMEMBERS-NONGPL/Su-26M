@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>IAS.ac</path>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+	  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+	  <interpolation>
+	    <entry><ind>  0</ind><dep>  360</dep></entry>
+        <entry><ind>  27</ind><dep>  340</dep></entry>
+        <entry><ind> 243</ind><dep>  20</dep></entry>
+       </interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList> 

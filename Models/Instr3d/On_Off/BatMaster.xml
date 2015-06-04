@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>BatMaster.ac</path>
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>onBat</object-name>
+    <visible>false</visible>
+  <action>                             
+   <desc>battery-switch</desc>
+   <button>0</button>               
+    <binding>
+    <command>property-assign</command>
+    <property>/controls/electric/battery-switch</property>
+      <value>true</value>                     
+   </binding>
+  </action>
+  </animation>  
+
+  <animation>
+    <type>pick</type>
+    <object-name>offBat</object-name>
+    <visible>false</visible>
+  <action>                             
+   <desc>battery-switch</desc>
+   <button>0</button>               
+    <binding>
+    <command>property-assign</command>
+    <property>/controls/electric/battery-switch</property>
+      <value>false</value>                     
+   </binding>
+  </action>
+  </animation>  
+    
+ 
+ <animation>
+  <type>rotate</type>
+  <object-name>batMaster</object-name>  
+  <property>/controls/electric/battery-switch</property>
+  <factor>-40</factor> 
+  <center>
+   <x-m>0.0029</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ 
+          
+ 
+        
+</PropertyList>

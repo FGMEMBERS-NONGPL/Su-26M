@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>Clock.ac</path>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>SetTime</object-name>
+    <visible>true</visible>
+  <action>
+   <desc>chronometer start</desc> 
+   <button>0</button> 
+    <binding>
+    <command>property-adjust</command> 
+    <property>/sim/time/chronom-sec0</property>
+    </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.chron_start0()</script>
+     </binding>      		 
+  </action>
+  </animation>  
+  
+  
+
+ <animation>
+  <type>rotate</type>
+  <object-name>secondsNeedle</object-name>  
+  <property>/instrumentation/clock/indicated-sec</property>
+  <factor>-6.0</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>minutesNeedle</object-name>  
+  <property>/instrumentation/clock/indicated-sec</property>
+  <factor>-0.1</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation>  
+
+ <animation>
+  <type>rotate</type>
+  <object-name>hoursNeedle</object-name>  
+  <property>/instrumentation/clock/indicated-sec</property>
+  <factor>-0.0083333</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation>  
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>hoursNeedle.001</object-name>  
+  <property>/sim/time/chronom-sec0</property>
+  <factor>0.0083333</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0182</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation>  
+
+ <animation>
+  <type>rotate</type>
+  <object-name>hoursNeedle.001</object-name>  
+  <property>/sim/time/elapsed-sec</property>
+  <factor>-0.0083333</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0182</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation>  
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>minutesNeedle.001</object-name>
+  <property>/sim/time/chronom-sec0</property>
+  <factor>0.1</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0182</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>minutesNeedle.001</object-name>
+  <property>/sim/time/elapsed-sec</property>
+  <factor>-0.1</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0182</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>secondsNeedle.001</object-name>
+  <property>/sim/time/chronom-sec0</property>
+  <factor>12.0</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.0182</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>secondsNeedle.001</object-name>
+  <property>/sim/time/elapsed-sec</property>
+  <factor>-12.0</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.0182</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+
+
+</PropertyList> 

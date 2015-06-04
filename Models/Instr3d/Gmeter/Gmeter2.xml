@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>Gmeter2.ac</path>
+
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+ 
+   <animation>
+  <type>rotate</type>
+  <object-name>gmeterNeedle2Min</object-name>  
+  <property>/fdm/jsbsim/accelerations/pilot-gmin[1]</property>
+  <factor>-22.5</factor>  
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>gmeterNeedle2max</object-name>  
+  <property>/fdm/jsbsim/accelerations/pilot-gmax[1]</property>
+   <factor>-22.5</factor>   
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+<animation>
+  <type>rotate</type>
+  <object-name>gmeterNeedle2</object-name>  
+  <property>/fdm/jsbsim/accelerations/n-pilot-z-norm[0]</property>
+   <factor>-22.5</factor>   
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>gReset2</object-name>
+    <visible>false</visible>
+  <action>                             
+   <desc>reset 2</desc>
+   <button>0</button>               
+   <binding>
+    <command>property-assign</command>
+    <property>/fdm/jsbsim/accelerations/pilot-gmax[1]</property>		     
+    <value>-1.0</value>
+   </binding>	
+   <binding>
+    <command>property-assign</command>
+    <property>/fdm/jsbsim/accelerations/pilot-gmin[1]</property>		     
+    <value>-1.0</value>
+   </binding>	
+  </action>
+  </animation>
+
+
+  
+ 
+</PropertyList>

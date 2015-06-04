@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>Breaker.ac</path>
+
+ 
+  <animation>
+  <type>translate</type>
+  <object-name>genBreaker</object-name>  
+  <property>/controls/circuit-breakers/generator</property>
+  <factor>-0.01</factor>
+   <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>radioBreaker</object-name>  
+  <property>/controls/circuit-breakers/nav-com-1</property>
+  <factor>-0.01</factor> 
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+  <animation>
+  <type>translate</type>
+  <object-name>fireBreaker</object-name>  
+  <property>/control/smoke</property>
+  <factor>-0.01</factor> 
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>pitotBreaker</object-name>  
+  <property>/controls/circuit-breakers/pitot-heat</property>
+  <factor>-0.01</factor> 
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>instrBreaker</object-name>  
+  <property>/controls/circuit-breakers/eng-instr-1</property>
+  <factor>-0.01</factor> 
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0 </z>
+  </axis>
+ </animation> 
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>batBreaker</object-name>  
+  <property>/controls/circuit-breakers/battery</property>
+  <factor>-0.01</factor> 
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+
+ 
+  <animation>
+    <type>pick</type>
+    <object-name>generator</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>generator</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/circuit-breakers/generator</property>		     
+   </binding>			 
+  </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>radio</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>radio breaker</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/circuit-breakers/nav-com-1</property>
+   </binding>
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/engines/engine/magneto-lock</property>		     
+   </binding>
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/comm/volume-lock</property>		     
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.vol_set()</script>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.chvol_set()</script>
+   </binding>      		 
+  </action>    
+  </animation>
+
+    
+  <animation>
+    <type>pick</type>
+    <object-name>fire</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>fire breaker</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-toggle</command>
+    <property>/control/smoke</property>		     
+   </binding>			 
+  </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>pitot</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>pitot breaker</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/circuit-breakers/pitot-heat</property>		     
+   </binding>			 
+  </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>instr</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>instruments breaker</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/circuit-breakers/eng-instr-1</property>		     
+   </binding>			 
+  </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>batt</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>battery breaker</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/circuit-breakers/battery</property>		     
+   </binding>			 
+  </action> 
+  </animation>   
+ 
+ 
+ 
+
+        
+</PropertyList>

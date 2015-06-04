@@ -3,13 +3,48 @@
 <PropertyList>
 
  <path>Su-26M.ac</path>
+ 
+	<nasal>
+		<load>
+		var livery_update = aircraft.livery_update.new("Aircraft/Su-26M/Models/Liveries", 10);
+		var self = cmdarg();
+		var aero = self.getNode("sim/aero", 1);
+		aero.alias(self.getNode("sim/multiplay/generic/string", 1));
+		</load>
+
+		<unload>
+		livery_update.stop();
+		aero.unalias();
+		</unload>
+	</nasal>
+
+	<animation>
+		<type>material</type>
+		<object-name>ElevatorL</object-name>
+		<object-name>ElevatorR</object-name>
+		<object-name>Fuselage_1</object-name>
+		<object-name>Stabilizer</object-name>
+        <object-name>Stabilizer.003</object-name>
+		<object-name>LeftWing</object-name>
+		<object-name>RightWing_1</object-name>
+		<object-name>Rudder</object-name>
+        <object-name>Pitot_1</object-name>
+        <object-name>EngineVents_0</object-name>
+		<object-name>EngineVents_1</object-name>
+		<object-name>Karman_1</object-name>
+		<object-name>LeftAileron</object-name>
+		<object-name>RightAileron_0</object-name>				
+		<object-name>RightAileron_1</object-name>												
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>26blue.png</texture>
+	</animation>
+ 
+ 
   <offsets>
-    <x-m>1.7</x-m>
-  </offsets>
- 
- <!-- include animations for the engine gills-->
- <!--<animation include="Aircraft/Su-26M/Models/engine-gills.xml"/>-->
- 
+    <x-m>1.9</x-m>
+    </offsets>
+
  <!-- LOD for the model as a whole -->
 
  <animation>
@@ -17,18 +52,73 @@
   <min-m>0</min-m>
   <max-m>10000</max-m>
  </animation>
+
+
+<animation>
+<type>shader</type>
+<shader>chrome</shader>
+<texture>glass_shader.png</texture>
+<object-name>CanopyM</object-name>
+<object-name>Windscreen</object-name>    
+</animation>
+
+<animation>
+<type>noshadow</type>
+<object-name>CanopyM</object-name>
+<object-name>Windscreen</object-name>    
+</animation>
+
+ <model>
+  <path>Aircraft/Su-26M/Models/Pilot/pilot.xml</path> 
+ <offsets>
+  <x-m>1.55</x-m> 
+  <y-m>0.000</y-m> 
+  <z-m>0.15</z-m>
+  <roll-deg>0</roll-deg> 
+  <pitch-deg>10</pitch-deg> 
+  <heading-deg>0</heading-deg> 
+  </offsets>
+  </model>
+
+  <!-- Particules pour OSG -->
+  
+  
+  <model>
+    <path>Aircraft/Su-26M/Models/Effects/smoke.xml</path>
+    <offsets>
+      <x-m>  1.4 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.640 </z-m>
+      </offsets>
+  </model>  
+
+  <model>
+    <path>Aircraft/Su-26M/Models/Effects/smokeLR.xml</path>
+    <offsets>
+      <x-m> 1.7 </x-m>
+      <y-m> -4.0 </y-m>
+      <z-m> 0.0 </z-m>
+     </offsets>
+  </model>  
+
+  <model>
+    <path>Aircraft/Su-26M/Models/Effects/smokeRG.xml</path>
+    <offsets>
+      <x-m> 1.7 </x-m>
+      <y-m> 4.0 </y-m>
+      <z-m> 0.0 </z-m>
+     </offsets>
+  </model>  
+      
  
- <!-- Cockpit LODing -->
+  
+<!--  Cockpit LODing -->
 
  <animation>
   <name>InteriorGroup</name>
   <object-name>Cockpit</object-name>
   <object-name>Seat</object-name>
-  <object-name>Head</object-name>
-  <object-name>PilotBody</object-name>
-  <object-name>LeftArm</object-name>
-  <object-name>RightArm</object-name>
-  <object-name>CanopyLatch</object-name>
+  <object-name>CanopyLatchM</object-name> 
   <object-name>Stick</object-name>
   <object-name>Throttle</object-name>
  </animation>
@@ -48,9 +138,23 @@
      <object-name>TailWheelTire</object-name>
      <object-name>TailWheelRim</object-name>
      <object-name>Spinner</object-name>
-     <object-name>CanopyFrame</object-name>
-     <object-name>Canopy</object-name>
+     <object-name>CanopyFrameM</object-name> 
+     <object-name>CanopyLatchM</object-name>
+     <object-name>CanopyM</object-name>
      <object-name>Windscreen</object-name>
+     <object-name>avantbrasD</object-name>
+     <object-name>avantbrasG</object-name>
+     <object-name>brasD</object-name>
+     <object-name>brasG</object-name>
+     <object-name>coprs</object-name>
+     <object-name>cuisseD</object-name>
+     <object-name>cuisseG</object-name>
+     <object-name>jambeD</object-name>
+     <object-name>jambeG</object-name>
+     <object-name>manche</object-name>
+     <object-name>piedD</object-name>
+     <object-name>piedG</object-name>
+     <object-name>tete</object-name>
  </animation> 
 
  <animation>
@@ -63,13 +167,7 @@
     </not>
   </condition>
  </animation>
-
- <animation>
-  <type>noshadow</type>
-  <object-name>Canopy</object-name>
-  <object-name>Windscreen</object-name>
- </animation>
-
+ 
       
  <!-- Propeller + engine ************************-->
  
@@ -80,7 +178,7 @@
   <condition>
    <less-than>
     <property>engines/engine[0]/rpm</property>
-    <value>800</value>
+    <value>1000</value>
    </less-than>
   </condition>
  </animation>
@@ -106,7 +204,7 @@
   <animation>
   <type>select</type>
   <object-name>PropellerDisk</object-name>
-  <condition>
+   <condition>
    <greater-than>
     <property>engines/engine[0]/rpm</property>
     <value>800</value>
@@ -123,32 +221,66 @@
   <type>spin</type>
   <object-name>PropellerDisk</object-name>
   <property>engines/engine[0]/rpm</property>
-  <factor>-0.05</factor>
+  <factor>0.05</factor>
   <center>
    <x-m>-1.77</x-m>
    <y-m>0</y-m>
    <z-m>-0.12</z-m>
   </center>
   <axis>
-   <x>1.0</x>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>select</type>
+  <object-name>PropellerDisk2</object-name>
+   <condition>
+   <greater-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>800</value>
+   </greater-than>
+  </condition>
+ </animation>
+ 
+ <animation>
+  <type>noshadow</type>
+  <object-name>PropellerDisk2</object-name>
+ </animation> 
+
+ <animation>
+  <type>spin</type>
+  <object-name>PropellerDisk2</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <factor>0.05</factor>
+  <center>
+   <x-m>-1.77</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.12</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
    <y>0.0</y>
    <z>0.0</z>
   </axis>
  </animation>
  
   
+ 
 
 
  <!-- Gear ************************-->
 
  
-<!-- <animation>
+ <animation>
   <type>rotate</type>
   <object-name>TailWheelFork</object-name>
   <object-name>TailWheelTire</object-name>
   <object-name>TailWheelRim</object-name>  
   <property>/fdm/jsbsim/fcs/steer-pos-deg[2]</property>
-  <factor>1.0</factor>
+  <factor>-1.0</factor>
   <center>
    <x-m>4.59</x-m>
    <y-m>0.0</y-m>
@@ -159,7 +291,7 @@
    <y>0.00</y>
    <z>1.0</z>
   </axis>
- </animation> -->
+ </animation> 
  
   <animation>
   <type>spin</type>
@@ -276,7 +408,7 @@
   <type>rotate</type>
   <object-name>Rudder</object-name>
   <property>/controls/flight/rudder</property>
-  <factor>17.5</factor>
+  <factor>32.0</factor>
   <center>
    <x-m>4.33</x-m>
    <y-m>0.0</y-m>
@@ -631,13 +763,17 @@
   </axis>
  </animation>
  
- <!-- canopy-->
+ <!-- canopy -->
  
-  <animation>
+   <animation>
   <type>select</type>
-  <object-name>Canopy</object-name>
-  <object-name>CanopyFrame</object-name>
-  <object-name>VentFlap</object-name>
+  <object-name>CanopyM</object-name>
+  <object-name>CanopyC</object-name>
+  <object-name>CanopyFrameC</object-name>
+  <object-name>VentFlapC</object-name>
+  <object-name>CanopyFrameM</object-name>
+  <object-name>VentFlapM</object-name>
+  <object-name>CanopyLatchM</object-name>      
   <condition>
    <not>
     <property>controls/canopy/canopy-jettison</property>
@@ -645,14 +781,23 @@
   </condition>  
  </animation>
  
+ 
+
+ <animation>
+  <name>CanopyGroupM</name>
+  <object-name>CanopyFrameM</object-name>
+  <object-name>Canopy</object-name>
+  <object-name>CanopyLatchM</object-name>    
+  <object-name>VentFlapM</object-name>
+ </animation>
+ 
+ 
+
  <animation>
   <type>rotate</type>
-  <object-name>CanopyFrame</object-name>
-  <object-name>Canopy</object-name>
-  <object-name>CanopyLatch</object-name>    
-  <object-name>VentFlap</object-name>   
+  <object-name>CanopyGroupM</object-name>    
   <property>controls/canopy/canopy-pos-norm</property>
-  <factor>45.0</factor>
+  <factor>60.0</factor>
   <center>
    <x-m>2.27</x-m>
    <y-m>0.0</y-m>
@@ -663,11 +808,13 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
- </animation> 
+ </animation>  
  
+ 
+  
  <animation>
   <type>rotate</type>
-  <object-name>CanopyLatch</object-name>    
+  <object-name>CanopyLatchM</object-name>    
   <property>controls/canopy/canopy-pos-norm</property>
   <interpolation>
      <entry><ind> 0</ind><dep>0</dep></entry>
@@ -688,9 +835,9 @@
  
   <animation>
   <type>rotate</type>
-  <object-name>VentFlap</object-name>    
+  <object-name>VentFlapM</object-name>      
   <property>controls/canopy/vent-flap-norm</property>
-  <factor>20.0</factor>
+  <factor>45.0</factor>
   <center>
    <x-m>1.275</x-m>
    <y-m>0.0</y-m>
@@ -702,18 +849,8 @@
    <z>0.0</z>
   </axis>
  </animation>  
+ 
 
- <!-- Inclusion of 2D panels  **************************************-->
-
- <model>
-  <name>2D panels</name>
-  <path>Aircraft/Su-26M/Models/Su-26M-panels.xml</path>
-  <offsets>
-   <x-m>0.0</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.0</z-m>
-  </offsets>
- </model>
  
 <!-- Inclusion of virtual cockpit  **************************************-->
 
@@ -726,6 +863,5 @@
    <z-m>0.0</z-m>
   </offsets>
  </model> 
- 
 
 </PropertyList>

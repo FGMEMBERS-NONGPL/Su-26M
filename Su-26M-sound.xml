@@ -7,7 +7,7 @@
 <!-- Engine 1 -->
   <crank>
    <name>engstart1</name>
-   <path>Sounds/engstart.wav</path>
+   <path>Aircraft/Su-26M/Sounds/Su-26M_start.wav</path>
    <property>/engines/engine[0]/cranking</property>
    <position>
     <x>-2.0</x>
@@ -56,7 +56,7 @@
   <engine>
    <name>engine1</name>
    <mode>looped</mode>
-   <path>Sounds/wasp.wav</path>
+   <path>Aircraft/Su-26M/Sounds/Su-26M_engn1.wav</path>
    <property>/engines/engine[0]/running</property>
    <position>
     <x>-2.0</x>
@@ -69,6 +69,10 @@
     <min>0.15</min>
     <max>0.6</max>
     <offset>0.15</offset>
+   </volume>
+   <volume>
+    <property>/controls/canopy/canopy-pos-norm</property>
+    <factor>0.5</factor>
    </volume>
    <pitch>
     <property>/engines/engine[0]/rpm</property>
@@ -130,7 +134,7 @@
   <wind>
    <name>wind</name>
    <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
+   <path>Aircraft/Su-26M/Sounds/Su-26M_wind.wav</path>
    <property>/velocities/airspeed-kt</property>
    <volume>
     <property>/position/altitude-ft</property>
@@ -178,7 +182,285 @@
    <path>Sounds/click.wav</path>
   </click>
 -->
+ <click>
+  <name>Breaker generator on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>controls/circuit-breakers/generator</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>Breaker generator off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>controls/circuit-breakers/generator</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
 
+ <click>
+  <name>radioBreaker on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>controls/circuit-breakers/nav-com-1</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>radioBreaker off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>controls/circuit-breakers/nav-com-1</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+  
+ <click>
+  <name>fire on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/control/smokewings</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>fire off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/control/smokewings</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>Smoke on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/control/smoke</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>Smoke off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/control/smoke</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+    
+  
+  
+ <click>
+  <name>pitotBreaker on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/circuit-breakers/pitot-heat</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>pitotBreaker off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/circuit-breakers/pitot-heat</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>instrBreaker on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/circuit-breakers/eng-instr-1</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>instrBreaker off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/circuit-breakers/eng-instr-1</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>batBreaker on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/circuit-breakers/battery</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>batBreaker off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/circuit-breakers/battery</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+      
+ <click>
+  <name>magneto1 on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/engines/engine/magneto1</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>magneto1 off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/engines/engine/magneto1</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>magneto2 on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/engines/engine/magneto2</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>magneto2 off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/engines/engine/magneto2</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>batMaster on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/electric/battery-switch</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>batMaster off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/electric/battery-switch</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>Valve on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/engines/engine/mixture</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>Valve off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/engines/engine/mixture</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+
+ <click>
+  <name>StarterLock on</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <property>/controls/engines/engine/starter-lock</property> 
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+ </click>
+ <click>
+  <name>StarterLock off</name> 
+   <path>Sounds/click.wav</path> 
+    <condition>
+     <not>
+      <property>/controls/engines/engine/starter-lock</property> 
+     </not>
+    </condition>
+   <volume>
+    <factor>1.0</factor> 
+   </volume>
+  </click>
+     
+      
 </fx>
  
 </PropertyList>

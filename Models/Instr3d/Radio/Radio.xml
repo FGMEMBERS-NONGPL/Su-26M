@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>Radio.ac</path>
+
+
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>RVD</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>Radio Volume decrease</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/volume-set</property>
+    <step>-0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.vol_set()</script>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.chvol_set()</script>
+   </binding>      		 
+  </action>
+  </animation> 
+
+  <animation>
+    <type>pick</type>
+    <object-name>RVI</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>Radio Volume increase</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/volume-set</property>
+    <step>0.05</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.vol_set()</script>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.chvol_set()</script>
+   </binding>      		 
+  </action>
+  </animation> 
+
+  <animation>
+    <type>pick</type>
+    <object-name>LFD</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>large frequency decrease</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/frequencies/select100</property>
+    <mask>integer</mask>
+    <step>-1</step>
+    <min>0</min>
+    <max>18</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.freq_set()</script>
+   </binding>      		 
+  </action>
+  </animation> 
+
+  <animation>
+    <type>pick</type>
+    <object-name>LFI</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>large frequency increase</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/frequencies/select100</property>
+    <mask>integer</mask>
+    <step>1</step>
+    <min>0</min>
+    <max>18</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>			 
+   <binding>
+      <command>nasal</command>
+      <script>scripts.freq_set()</script>
+   </binding>      		 
+  </action>
+  </animation> 
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>SFD</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>small frequency decrease</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/frequencies/select1</property>
+    <mask>integer</mask>
+    <step>-1</step>
+    <min>0</min>
+    <max>40</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+    <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/frequencies/select2</property>
+    <mask>integer</mask>
+    <step>-1</step>
+    <min>0</min>
+    <max>4</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.freq_set()</script>
+   </binding>      		 
+  </action>
+  </animation> 
+
+ <animation>
+  <object-name>freq100</object-name>
+  <object-name>freq1</object-name>
+  <object-name>freq2</object-name>
+  <type>select</type>
+  <condition>
+  <and>
+  <greater-than>
+    <property>/systems/electrical/outputs/bus</property>
+    <value>21</value>
+   </greater-than>
+   <equals>
+   <property>/controls/circuit-breakers/nav-com-1</property>
+   <value>true</value>
+   </equals>
+   </and>
+  </condition>  
+ </animation>
+  
+  
+  <animation>
+    <type>pick</type>
+    <object-name>SFI</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>small frequency increase</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/frequencies/select1</property>
+    <mask>integer</mask>
+    <step>1</step>
+    <min>0</min>
+    <max>40</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/comm/frequencies/select2</property>
+    <mask>integer</mask>
+    <step>1</step>
+    <min>0</min>
+    <max>4</max>
+    <resolution>1</resolution>
+    <wrap>true</wrap>
+   </binding>
+   <binding>
+      <command>nasal</command>
+      <script>scripts.freq_set()</script>
+   </binding>      		 
+  </action>  
+  </animation> 
+    
+  
+ 
+<!-- com1 -->
+ 
+ <animation>
+  <type>textranslate</type>
+  <object-name>freq100</object-name>  
+  <property>instrumentation/comm/frequencies/select100</property>
+  <factor>-0.054687</factor>
+   <step>1</step> 
+   <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+
+  
+  
+ <animation>
+  <type>textranslate</type>
+  <object-name>freq1</object-name>  
+  <property>/instrumentation/comm/frequencies/select1</property>
+  <factor>-0.013672</factor>
+  <step>4</step> 
+    <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+  
+ <animation>
+  <type>textranslate</type>
+  <object-name>freq2</object-name>  
+  <property>/instrumentation/comm/frequencies/select2</property>
+  <factor>-0.054687</factor>
+  <step>1</step> 
+   <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation> 
+ 
+ 
+  
+  
+
+</PropertyList> 

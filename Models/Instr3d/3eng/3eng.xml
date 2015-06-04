@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>3eng.ac</path>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>NeedleOT</object-name>
+  <property>/engines/engine/oil-temperature-degf</property>
+      <interpolation>
+        <entry><ind> 32</ind><dep> 70</dep></entry>
+        <entry><ind> 200</ind><dep> 20</dep></entry>
+        <entry><ind> 450</ind><dep> -35</dep></entry>
+        <entry><ind> 550</ind><dep> -75</dep></entry>
+      </interpolation>
+        <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.003</z-m>
+  </center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+
+ <animation>
+  <type>rotate</type>
+  <object-name>NeedleFP</object-name>  
+  <property>/engines/engine/fuel-flow-gph</property>
+       <interpolation>
+        <entry><ind>0</ind><dep>-150</dep></entry>
+        <entry><ind>10</ind><dep>-100</dep></entry>
+        <entry><ind>30</ind><dep>-110</dep></entry>
+        <entry><ind>60</ind><dep>-100</dep></entry>
+        <entry><ind>80</ind><dep>-90</dep></entry>
+      </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.0218</y-m>
+   <z-m>-0.016</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation>
+
+ <animation>
+  <object-name>NeedleFP</object-name>
+  <type>select</type>
+  <condition>
+  <greater-than>
+    <property>/engines/engine/fuel-flow-gph</property>
+    <value>0</value>
+   </greater-than>
+  </condition>  
+ </animation> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>NeedleFP2</object-name>  
+  <property>/engines/engine/fuel-flow-gph-ind</property>
+       <interpolation>
+        <entry><ind>0</ind><dep>-150</dep></entry>
+        <entry><ind>80</ind><dep>-90</dep></entry>
+      </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>-0.0218</y-m>
+   <z-m>-0.016</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+ <animation>
+  <object-name>NeedleFP2</object-name>
+  <type>select</type>
+  <condition>
+   <equals>
+    <property>/engines/engine/fuel-flow-gph</property>
+    <value>0</value>
+   </equals>
+  </condition>  
+ </animation> 
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>NeedleOP</object-name>  
+  <property>/engines/engine/oil-pressure-psi</property>
+       <interpolation>
+        <entry><ind>0</ind><dep>150</dep></entry>
+        <entry><ind>213</ind><dep>30</dep></entry>
+      </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0217</y-m>
+   <z-m>-0.016</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+</animation> 
+
+	
+
+</PropertyList> 
+

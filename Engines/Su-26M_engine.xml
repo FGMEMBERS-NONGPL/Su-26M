@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+  File:     mp-14.xml
+  Author:   Aero-Matic v 0.81
+
+  Inputs:
+    name:           mp-14
+    type:           piston
+    power:          360 hp
+    augmented?      no
+    injected?       no
+-->
+
+<piston_engine name="mp-14">
+  <minmp unit="INHG">          6.0 </minmp><!-- Deprecated -->
+  <maxmp unit="INHG">         30.0 </maxmp><!-- Deprecated -->
+  <displacement unit="IN3"> 621.00 </displacement>
+<!-- Defining <bsfc> over-rides the bsfc value calculated from <maxhp> -->
+  <bsfc>           0.75 </bsfc>
+  <maxhp>        360.00 </maxhp>
+  <cycles>         4.0 </cycles>
+  <idlerpm>      500.0 </idlerpm>
+<!--  <maxrpm>      2950.0 </maxrpm> -->
+  <maxthrottle>    1.0 </maxthrottle>
+  <minthrottle>    0.1 </minthrottle>
+  <sparkfaildrop>  0.0 </sparkfaildrop>
+  <numboostspeeds>   1 </numboostspeeds>
+  <boostoverride>    0 </boostoverride>
+  <ratedboost1> 4 </ratedboost1>
+  <ratedpower1> 360 </ratedpower1>
+  <ratedrpm1> 2950 </ratedrpm1>
+  <ratedaltitude1> 0 </ratedaltitude1> 
+</piston_engine>

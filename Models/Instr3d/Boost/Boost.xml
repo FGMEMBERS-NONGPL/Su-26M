@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>Boost.ac</path>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+  <property>/engines/engine/mp-osi</property>
+      <interpolation>
+        <entry><ind> 12</ind><dep> 116</dep></entry>
+        <entry><ind> 63</ind><dep> -219</dep></entry>
+      </interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList> 

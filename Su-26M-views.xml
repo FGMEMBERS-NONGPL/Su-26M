@@ -1,14 +1,37 @@
 <PropertyList>
 
   <!-- pilot seat in cockpit. -->
- <number-views type="int">7</number-views>
+
+
+  <view n="100">
+    <name>Aerobatics View</name>
+    <type>lookfrom</type>
+    <internal type="bool">true</internal>
+    <config>
+    
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+
+      <at-model type="bool">false</at-model>
+    
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+ 
+      <x-offset-m>0.0</x-offset-m>
+      <y-offset-m>0.5</y-offset-m>
+      <z-offset-m>3.8</z-offset-m>
+   </config>
+  </view> 
+ 
+ 
+ 
   <view n="0">
    <internal>true</internal>
    <config>
      <!-- x/y/z == right/up/back -->
      <x-offset-m>0.0</x-offset-m>
      <y-offset-m>0.5</y-offset-m>
-     <z-offset-m>3.6</z-offset-m>
+     <z-offset-m>3.9</z-offset-m>
    </config>
   </view>
 
@@ -43,7 +66,7 @@
   </view>
 
   <view n="6">
-    <name>aerobatics View</name>
+    <name>Landing View</name>
     <type>lookfrom</type>
     <internal type="bool">true</internal>
     <config>
@@ -56,10 +79,13 @@
       <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
       <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
  
-      <x-offset-m>0.0</x-offset-m>
+      <x-offset-m>-0.1</x-offset-m>
       <y-offset-m>0.5</y-offset-m>
-      <z-offset-m>3.6</z-offset-m>
+      <z-offset-m>3.8</z-offset-m>
    </config>
   </view>
+
+  
+  
 
 </PropertyList>

@@ -5,24 +5,76 @@
  <sim include="Su-26M-views.xml">
 
   <description>Sukhoi Su-26M</description>
-  <status>alpha</status>
-  <aircraft-version>1.0</aircraft-version>  
+  <author>Enrique Laso Leon, Makswell)</author>
+  <status>beta</status>
+  <aircraft-version>2.0</aircraft-version>  
   
   <startup>
-   <splash-texture>Aircraft/Su-26M/Su-26M2.rgb</splash-texture>
+   <splash-texture>Aircraft/Su-26M/Su-26M.png</splash-texture>
   </startup>
 
+     <help>
+        <title>Sukhoi Su-26M</title>
+        <line></line>
+        <key>
+            <name>C</name>
+            <desc>Toggle Canopy</desc>
+        </key>
+        <key>
+            <name>S</name>
+            <desc>Toggle center smoke</desc>
+        </key>
+        <key>
+            <name>f</name>
+            <desc>Toggle wingtip smoke</desc>
+        </key>
+        <key>
+            <name>g</name>
+            <desc>Open gills</desc>
+        </key>
+        <key>
+            <name>G</name>
+            <desc>Close gills</desc>
+        </key>
+        <line>   Startup Procedure</line>
+        <line>1:Turn on both GROUND BATTERY</line>
+        <line>2:Turn on INST IND</line>
+        <line>3:Push three-four times priming pump</line>
+        <line>4:Turn on RADIO START</line>
+        <line>5:Turn on both MAGNETO</line>
+        <line>6:Open airStartValve</line>
+        <line>7:Push start paddle</line>
+        <line>8:Once engine is running,</line>
+        <line>  free start paddle</line>
+        <line>9:Close airStartValve</line>        
+        <line>10:Turn on GEN</line>
+    </help>
+
+    <menubar>
+        <default>
+            <menu n="10">
+                <label>Su-26M</label>
+                <enabled type="bool">true</enabled>
+                    <item>
+                        <label>Select Livery</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>aircraft.livery.dialog.toggle()</script>
+                        </binding>
+                    </item>
+            </menu>
+        </default>
+    </menubar>
+  
+  
+  
+  
   <flight-model>jsb</flight-model>  
   <aero>Su-26M</aero>
   
  <model>
    <path>Aircraft/Su-26M/Models/Su-26M.xml</path>
  </model> 
- 
-  <panel>
-   <path>Aircraft/Su-26M/Panels/acroPanel.xml</path>
-   <visibility archive="y">false</visibility>
-  </panel>   
  
   <systems>
     <electrical>
@@ -36,18 +88,14 @@
   
   <consumables>
    <fuel>
-    <tank n="0">
+    <tank n="2">
      <level-gal_us archive="y">17</level-gal_us>
     </tank>
    </fuel>
   </consumables>
- 
- <!-- Smoke Generators -->
-  <submodels>
-    <serviceable type="bool">1</serviceable>
-    <path>Aircraft/Su-26M/Su-26M-submodels.xml</path>
-  </submodels>
 
+
+  
  </sim>
 
   <controls>
@@ -55,7 +103,7 @@
   <lamp-test-motion>0.0</lamp-test-motion>
   <engines>
    <engine n="0">
-    <magnetos n="0">3</magnetos>
+    <magnetos n="0">0</magnetos>
    </engine>
   </engines>
   <canopy>
@@ -71,11 +119,11 @@
    <keyboard>
    
     <key n="83">
-     <name>Shift-s</name>
+     <name>S</name>
      <desc>Toggle center smoke</desc>
      <binding>
       <command>property-toggle</command>
-      <property>/ai/submodels/submodel[0]/smoke</property>
+      <property>/control/smoke</property>
      </binding>
     </key>
     
@@ -84,7 +132,7 @@
      <desc>Toggle wingtip smoke</desc>
      <binding>
       <command>property-toggle</command>
-      <property>/ai/submodels/submodel[1]/tipsmoke</property>
+      <property>/control/smokewings</property>
      </binding>
     </key>
     
@@ -118,7 +166,7 @@
          <script>scripts.toggle_canopy()</script>
        </binding>
     </key>
-    
+     
    </keyboard>
   </input>
   
@@ -126,10 +174,8 @@
   <nasal>
     <Su-26M>
       <module>scripts</module>
-      <file>Aircraft/Su-26M/Su-26M.nas</file>
+      <file>Aircraft/Su-26M/Nasal/Su-26M.nas</file>
     </Su-26M>
   </nasal>
   
- 
-
 </PropertyList>

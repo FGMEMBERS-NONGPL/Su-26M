@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>Alt.ac</path>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>Glass</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>Glass</object-name>
+  </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1</object-name>  
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>-0.0109723</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle</object-name>  
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>-0.109723</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>baro_d</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>baro setting decrease</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.01</step>
+    <min>25.9</min>
+    <max>31.0</max>
+    <wrap>false</wrap>
+   </binding>			 
+  </action>   
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>baro_i</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>baro setting increase</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.01</step>
+    <min>25.9</min>
+    <max>31.0</max>
+    <wrap>false</wrap>
+   </binding>			 
+  </action>                
+  </animation> 
+
+  <animation>
+    <type>pick</type>
+    <object-name>baro_d10</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>baro setting decrease</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.1</step>
+    <min>25.9</min>
+    <max>31.0</max>
+    <wrap>false</wrap>
+   </binding>			 
+  </action>   
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>baro_i10</object-name>
+    <visible>false</visible>
+  <action>			       
+   <desc>baro setting increase</desc>
+   <button>0</button>		       
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.1</step>
+    <min>25.9</min>
+    <max>31.0</max>
+    <wrap>false</wrap>
+   </binding>			 
+  </action>                
+  </animation> 
+  
+  
+  
+  
+ <animation>
+  <type>rotate</type>
+  <object-name>Scale2</object-name>  
+  <property>/instrumentation/altimeter/setting-inhg</property>
+  <offset-deg>-56.0</offset-deg>
+  <factor>50.0</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation> 
+  
+
+</PropertyList> 
